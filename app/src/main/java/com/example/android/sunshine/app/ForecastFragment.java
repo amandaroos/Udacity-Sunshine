@@ -12,8 +12,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,10 +32,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 /**
  * ForecastFragment displays weather data from an openweathermap.org API
  */
 public class ForecastFragment extends Fragment {
+
+    private final String LOG_TAG = ForecastFragment.class.getSimpleName();
 
     private ArrayAdapter<String> mForecastAdapter;
 
@@ -93,6 +99,14 @@ public class ForecastFragment extends Fragment {
         //set the mForecastAdapter on our list view
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mForecastAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String forecast = (String) adapterView.getItemAtPosition(i);
+                Toast.makeText(getActivity().getApplicationContext(), forecast,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return rootView;
     }
