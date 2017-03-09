@@ -13,7 +13,8 @@ public class DetailActivity extends ActionBarActivity {
         setContentView(R.layout.activity_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //Read the intent string passed in from ForecastFragment
+
+        //Read the string passed in from the intent
         Intent intent = getIntent();
         String forecast = intent.getStringExtra(Intent.EXTRA_TEXT);
 
