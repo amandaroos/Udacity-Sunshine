@@ -4,6 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sunshine.app.DetailActivity">
+    tools:context="com.example.android.sunshine.app.DetailActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="336dp"
+        android:layout_height="463dp"
+        android:id="@+id/detail_forecast"
+        tools:text="Test weather forecast string"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp" />
 
 </android.support.constraint.ConstraintLayout>
