@@ -143,6 +143,19 @@ public class ForecastFragment extends Fragment {
             long roundedHigh = Math.round(high);
             long roundedLow = Math.round(low);
 
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String unitPref = prefs.getString(getString(R.string.pref_unit_key),
+                    getString(R.string.pref_unit_default));
+
+            Log.e("FetchWeather","value of unitPref: " + unitPref);
+
+            if (Integer.parseInt(unitPref) == 1){
+                roundedHigh = ( ( roundedHigh * 9 ) / 5 ) + 32;
+                roundedLow = ( ( roundedLow * 9 ) / 5 ) + 32;
+
+                Log.e("FetchWeather","Inside if: " + roundedHigh + " " + roundedLow);
+            }
+
             String highLowStr = roundedHigh + "/" + roundedLow;
             return highLowStr;
         }
