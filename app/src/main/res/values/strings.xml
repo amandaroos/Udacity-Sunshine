@@ -24,7 +24,7 @@
     <string name="pref_unit_key" translatable="false">units</string>
 
     <!-- Default temperature type for units preference [CHAR LIMIT=NONE] -->
-    <string name="pref_unit_default" translatable="false">1</string>
+    <string name="pref_unit_default" translatable="false">Imperial</string>
 
     <string-array name="Units">
         <item>Metric</item>
