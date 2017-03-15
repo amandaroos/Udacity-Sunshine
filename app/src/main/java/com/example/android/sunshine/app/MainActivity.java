@@ -64,8 +64,6 @@ public class MainActivity extends ActionBarActivity {
         Uri geoLocation = Uri.parse("geo:0,0?").buildUpon()
                 .appendQueryParameter("q", location)
                 .build();
-        Log.v(LOG_TAG, "Uri: " + geoLocation.toString());
-
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(geoLocation);
